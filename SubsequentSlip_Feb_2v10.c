@@ -3699,7 +3699,7 @@ float Energy_calculation(double *fx, double *fy, double *fz, double eps[NS][ND][
     
     
     #ifdef GPU 
-    #pragma acc data copyin(fx[0:N1*N2*N3],fy[0:N1*N2*N3],fz[0:N1*N2*N3]) create(A) create(E_real) /*copyin(data[0: 2*(NSV)*(N1)*(N2)*(N3)])*/  /*create(C)*/    
+    #pragma acc data copyin(fx[0:N1*N2*N3],fy[0:N1*N2*N3],fz[0:N1*N2*N3]) create(A) create(E_real) /*copyin(data[0: 2*(NSV)*(N1)*(N2)*(N3)])*/  /*create(C)*/ /*Create(A)*/    
     //#pragma acc data /*create(strainv_real[0:NS][0:ND][0:ND][0:N1][0:N2][0:N3],strainv_imag[0:NS][0:ND][0:ND][0:N1][0:N2][0:N3])*/ /*copyin(eps[0:NS][0:ND][0:ND])  create(G[0:ND][0:ND])*/ 
     /*#pragma acc data copyout(A[0:N1][0:N2][0:N3][0:ND][0:ND][0:ND][0:ND])*/
     /*#pragma acc data copy(strainp_imag[0:NS][0:ND][0:ND][0:N1][0:N2][0:N3],strainp_real[0:NS][0:ND][0:ND][0:N1][0:N2][0:N3])
